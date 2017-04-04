@@ -12,7 +12,7 @@
         <!--LogIn Screen-->
         <scene sceneID="QMj-ES-cSY">
             <objects>
-                <viewController id="2sc-W9-7ti" userLabel="LogIn Screen" sceneMemberID="viewController">
+                <viewController id="2sc-W9-7ti" userLabel="LogIn Screen" customClass="FacebookLogin" customModule="Globetrotter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KYU-6O-1yL"/>
                         <viewControllerLayoutGuide type="bottom" id="nkz-gc-ynL"/>
@@ -27,17 +27,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KzX-Mr-zd3" userLabel="Shadow">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="QCu-5A-qYq">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="QCu-5A-qYq">
                                         <rect key="frame" x="17" y="78" width="341" height="87"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Oval" translatesAutoresizingMaskIntoConstraints="NO" id="huD-SV-fj3">
-                                        <rect key="frame" x="151" y="187" width="75" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="world" translatesAutoresizingMaskIntoConstraints="NO" id="Vr0-wo-55K">
-                                        <rect key="frame" x="164" y="200" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sharing travel photos with friends and family has never been easier!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0Q-SL-Pzg">
                                         <rect key="frame" x="19" y="293" width="338" height="50"/>
@@ -53,9 +44,51 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOr-qX-BMO" customClass="RoundButton" customModule="Globetrotter" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuJ-Tx-xo5" customClass="RoundButton" customModule="Globetrotter" customModuleProvider="target">
+                                        <rect key="frame" x="54" y="506" width="267" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="R6d-Ay-Kw6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                        <state key="normal" title="LOG IN WITH FACEBOOK">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="facebookBtnTapped:" destination="2sc-W9-7ti" eventType="touchUpInside" id="1Yq-If-XKW"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Facebook" translatesAutoresizingMaskIntoConstraints="NO" id="LW1-cY-lsK">
+                                        <rect key="frame" x="178" y="514" width="19" height="19"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By using Globetrotter you agree to the Terms, Cookie Policy and Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWv-rk-MKi">
+                                        <rect key="frame" x="54" y="631.5" width="267" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jk-fb-UYd">
+                                        <rect key="frame" x="166" y="603.5" width="44" height="29"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Vey-Sn-Cay" kind="show" id="rlK-qd-KY2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOr-qX-BMO" customClass="RoundButton" customModule="Globetrotter" customModuleProvider="target">
                                         <rect key="frame" x="54" y="426" width="267" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="AH3-kx-i7t"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
                                         <state key="normal" title="LOG IN">
                                             <color key="titleColor" red="0.97863548990000004" green="0.33970522879999998" blue="0.30593103170000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -72,53 +105,47 @@
                                             <segue destination="VWq-4D-0QK" kind="show" id="Jsn-DQ-DoJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuJ-Tx-xo5" customClass="RoundButton" customModule="Globetrotter" customModuleProvider="target">
-                                        <rect key="frame" x="54" y="506" width="267" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
-                                        <state key="normal" title="LOG IN WITH FACEBOOK">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                <color key="value" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="25"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Facebook" translatesAutoresizingMaskIntoConstraints="NO" id="LW1-cY-lsK">
-                                        <rect key="frame" x="178" y="514" width="19" height="19"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="Tbd-gF-qeZ">
                                         <rect key="frame" x="175" y="434" width="24" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By using Globetrotter you agree to the Terms, Cookie Policy and Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWv-rk-MKi">
-                                        <rect key="frame" x="54" y="631.5" width="267" height="27.5"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jk-fb-UYd">
-                                        <rect key="frame" x="166" y="603.5" width="44" height="29"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
-                                        <state key="normal" title="Sign Up">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BuS-EG-S6e" userLabel="LogoImg">
+                                        <rect key="frame" x="140" y="173" width="95" height="75"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Oval" translatesAutoresizingMaskIntoConstraints="NO" id="huD-SV-fj3">
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="75"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="world" translatesAutoresizingMaskIntoConstraints="NO" id="Vr0-wo-55K">
+                                                <rect key="frame" x="19" y="13" width="58" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.75" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="wWv-rk-MKi" secondAttribute="bottom" constant="8" id="3P2-d7-TEL"/>
+                                    <constraint firstItem="QCu-5A-qYq" firstAttribute="centerX" secondItem="KzX-Mr-zd3" secondAttribute="centerX" id="B9W-8b-a83"/>
+                                    <constraint firstAttribute="bottom" secondItem="kuJ-Tx-xo5" secondAttribute="bottom" constant="111" id="Grx-mp-ad3"/>
                                     <constraint firstItem="7Jk-fb-UYd" firstAttribute="centerX" secondItem="KzX-Mr-zd3" secondAttribute="centerX" id="Ika-ps-ukD"/>
+                                    <constraint firstItem="kuJ-Tx-xo5" firstAttribute="trailing" secondItem="ZOr-qX-BMO" secondAttribute="trailing" id="L4u-sK-Joq"/>
                                     <constraint firstItem="wWv-rk-MKi" firstAttribute="top" secondItem="7Jk-fb-UYd" secondAttribute="bottom" constant="-1" id="Lfb-fJ-Boo"/>
+                                    <constraint firstItem="BuS-EG-S6e" firstAttribute="centerX" secondItem="KzX-Mr-zd3" secondAttribute="centerX" id="MXW-db-laf"/>
+                                    <constraint firstItem="kuJ-Tx-xo5" firstAttribute="leading" secondItem="ZOr-qX-BMO" secondAttribute="leading" id="PdK-kB-egf"/>
                                     <constraint firstItem="wWv-rk-MKi" firstAttribute="top" secondItem="7Jk-fb-UYd" secondAttribute="bottom" constant="-1" id="Stc-g1-v2l"/>
                                     <constraint firstItem="wWv-rk-MKi" firstAttribute="leading" secondItem="KzX-Mr-zd3" secondAttribute="leading" constant="54" id="T0c-2z-YZo"/>
+                                    <constraint firstItem="kuJ-Tx-xo5" firstAttribute="leading" secondItem="wWv-rk-MKi" secondAttribute="leading" id="eDI-in-Wq6"/>
+                                    <constraint firstItem="BuS-EG-S6e" firstAttribute="top" secondItem="QCu-5A-qYq" secondAttribute="bottom" constant="8" id="ftd-DN-RJT"/>
+                                    <constraint firstItem="7Jk-fb-UYd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kuJ-Tx-xo5" secondAttribute="bottom" constant="47.5" id="g1G-BT-uyv"/>
+                                    <constraint firstItem="ZOr-qX-BMO" firstAttribute="centerX" secondItem="KzX-Mr-zd3" secondAttribute="centerX" id="mOs-Eb-HHM"/>
+                                    <constraint firstItem="QCu-5A-qYq" firstAttribute="top" secondItem="KzX-Mr-zd3" secondAttribute="top" constant="78" id="mdc-cy-ddQ"/>
                                     <constraint firstItem="wWv-rk-MKi" firstAttribute="centerX" secondItem="KzX-Mr-zd3" secondAttribute="centerX" id="puW-fi-Bza"/>
                                     <constraint firstAttribute="trailing" secondItem="wWv-rk-MKi" secondAttribute="trailing" constant="54" id="vsa-tm-9b1"/>
+                                    <constraint firstItem="kuJ-Tx-xo5" firstAttribute="trailing" secondItem="wWv-rk-MKi" secondAttribute="trailing" id="xku-Pa-9c8"/>
+                                    <constraint firstItem="kuJ-Tx-xo5" firstAttribute="centerX" secondItem="LW1-cY-lsK" secondAttribute="centerX" id="z1h-at-FyI"/>
+                                    <constraint firstItem="kuJ-Tx-xo5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ZOr-qX-BMO" secondAttribute="bottom" constant="30" id="zzp-VC-Qvh"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -193,25 +220,6 @@
                                             <segue destination="2sc-W9-7ti" kind="show" id="owC-Mw-Abe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIS-ZJ-YKR" userLabel="LogInBtn" customClass="RoundButton" customModule="Globetrotter" customModuleProvider="target">
-                                        <rect key="frame" x="54" y="506" width="267" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
-                                        <state key="normal" title="LOG IN">
-                                            <color key="titleColor" red="0.97863548990000004" green="0.33970522879999998" blue="0.30593103170000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                <color key="value" white="1" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="25"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="gJP-RH-5JB" kind="showDetail" id="t3f-vI-pZP"/>
-                                        </connections>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="kEb-6z-bSp">
                                         <rect key="frame" x="175" y="514" width="24" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -222,6 +230,9 @@
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="Vey-Sn-Cay" kind="show" id="8nv-Xq-2Mi"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iHW-45-qQR" userLabel="UsernameField" customClass="RoundTextField" customModule="Globetrotter" customModuleProvider="target">
                                         <rect key="frame" x="54" y="273" width="267" height="50"/>
@@ -285,6 +296,25 @@
                                         <rect key="frame" x="70" y="286" width="24" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIS-ZJ-YKR" userLabel="LogInBtn" customClass="RoundButton" customModule="Globetrotter" customModuleProvider="target">
+                                        <rect key="frame" x="54" y="506" width="267" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                        <state key="normal" title="LOG IN">
+                                            <color key="titleColor" red="0.97863548990000004" green="0.33970522879999998" blue="0.30593103170000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" white="1" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="gJP-RH-5JB" kind="showDetail" id="t3f-vI-pZP"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.75" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -424,7 +454,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2WE-Wf-WYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2630" y="-960"/>
+            <point key="canvasLocation" x="-1002" y="-959"/>
         </scene>
         <!--Search-->
         <scene sceneID="lJG-aq-aqe">
@@ -473,7 +503,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9YT-f6-tWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4423" y="-201"/>
+            <point key="canvasLocation" x="-2794" y="-200"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nJ4-vq-Ys4">
@@ -508,7 +538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0F-TH-dAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3543" y="-201"/>
+            <point key="canvasLocation" x="-1914" y="-200"/>
         </scene>
         <!--Activity-->
         <scene sceneID="vqF-QI-w56">
@@ -558,7 +588,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4VH-jp-a3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2631" y="-201"/>
+            <point key="canvasLocation" x="-1002" y="-200"/>
         </scene>
         <!--Home-->
         <scene sceneID="Dg1-HU-8Nb">
@@ -626,7 +656,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZP-Gy-wKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5303" y="-201"/>
+            <point key="canvasLocation" x="-3674" y="-200"/>
         </scene>
         <!--Colour Tab-->
         <scene sceneID="RAw-Si-vrn">
@@ -658,7 +688,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgm-q5-iTz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3542" y="-960"/>
+            <point key="canvasLocation" x="-1914" y="-959"/>
         </scene>
         <!--Settings-->
         <scene sceneID="0Eb-Dl-XR4">
@@ -871,7 +901,230 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTT-Ol-zJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1716" y="-201.04947526236884"/>
+            <point key="canvasLocation" x="-87" y="-200"/>
+        </scene>
+        <!--SignUp-->
+        <scene sceneID="yW9-EB-ZuC">
+            <objects>
+                <viewController id="Vey-Sn-Cay" userLabel="SignUp" customClass="SignUpController" customModule="Globetrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dxb-V1-s3q"/>
+                        <viewControllerLayoutGuide type="bottom" id="3OA-VW-dJq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qkH-pe-RH0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="collageBG" translatesAutoresizingMaskIntoConstraints="NO" id="pxo-pi-yRu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6V-hF-Szm" userLabel="Shadow">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We're so excited to meet you!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8P2-fM-6e0">
+                                        <rect key="frame" x="20" y="146" width="338" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                        <color key="textColor" red="0.97863548990000004" green="0.33970522879999998" blue="0.30593103170000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We're so excited to meet you!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM7-Sj-PON">
+                                        <rect key="frame" x="20" y="145" width="338" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WELCOME" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f79-Hl-yjL">
+                                        <rect key="frame" x="20" y="91" width="338" height="68"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="45"/>
+                                        <color key="textColor" red="0.97863548990000004" green="0.33970522879999998" blue="0.30593103170000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WELCOME" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hd-aa-37Z">
+                                        <rect key="frame" x="20" y="90" width="338" height="68"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="45"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1E-Ay-ISG" userLabel="CloseBtn">
+                                        <rect key="frame" x="328" y="22" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="closeBtn"/>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BY4-y8-3Z7" userLabel="UsernameField" customClass="RoundTextField" customModule="Globetrotter" customModuleProvider="target">
+                                        <rect key="frame" x="54" y="279" width="267" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.39821742960000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dqW-bq-bO6" userLabel="PasswordField" customClass="RoundTextField" customModule="Globetrotter" customModuleProvider="target">
+                                        <rect key="frame" x="54" y="395" width="267" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Key 2" translatesAutoresizingMaskIntoConstraints="NO" id="4mK-H1-CcM">
+                                        <rect key="frame" x="70" y="408" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By using Globetrotter you agree to the Terms, Cookie Policy and Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuR-ec-fAG">
+                                        <rect key="frame" x="54" y="631.5" width="267" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User round 2" translatesAutoresizingMaskIntoConstraints="NO" id="9vC-cK-zNJ">
+                                        <rect key="frame" x="70" y="292" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="First/Last name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UFp-aE-ihk" userLabel="UsernameField" customClass="RoundTextField" customModule="Globetrotter" customModuleProvider="target">
+                                        <rect key="frame" x="54" y="221" width="267" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.39821742960000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User round 2" translatesAutoresizingMaskIntoConstraints="NO" id="kOU-q3-oER">
+                                        <rect key="frame" x="70" y="234" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="A9D-oR-xN1" userLabel="UsernameField" customClass="RoundTextField" customModule="Globetrotter" customModuleProvider="target">
+                                        <rect key="frame" x="54" y="337" width="267" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.39821742960000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="I2v-Lt-oZr">
+                                        <rect key="frame" x="68" y="352" width="24" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKI-B1-sou" userLabel="LogInBtn" customClass="RoundButton" customModule="Globetrotter" customModuleProvider="target">
+                                        <rect key="frame" x="54" y="506" width="267" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="SIGN UP">
+                                            <color key="titleColor" red="0.97863548990000004" green="0.33970522879999998" blue="0.30593103170000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" white="1" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signUpBtn:" destination="Vey-Sn-Cay" eventType="touchUpInside" id="Dby-L5-oE6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.75" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="UuR-ec-fAG" firstAttribute="centerX" secondItem="H6V-hF-Szm" secondAttribute="centerX" id="dGt-GF-wfQ"/>
+                                    <constraint firstItem="UuR-ec-fAG" firstAttribute="leading" secondItem="H6V-hF-Szm" secondAttribute="leading" constant="54" id="dP4-Hy-Iss"/>
+                                    <constraint firstAttribute="bottom" secondItem="UuR-ec-fAG" secondAttribute="bottom" constant="8" id="xDs-h2-Myz"/>
+                                    <constraint firstAttribute="trailing" secondItem="UuR-ec-fAG" secondAttribute="trailing" constant="54" id="zQq-cA-Nf6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H6V-hF-Szm" firstAttribute="leading" secondItem="qkH-pe-RH0" secondAttribute="leading" id="1xf-gb-bPG"/>
+                            <constraint firstItem="H6V-hF-Szm" firstAttribute="top" secondItem="qkH-pe-RH0" secondAttribute="top" id="9q7-A7-E1Y"/>
+                            <constraint firstAttribute="trailing" secondItem="pxo-pi-yRu" secondAttribute="trailing" id="GFB-Iz-QHw"/>
+                            <constraint firstItem="pxo-pi-yRu" firstAttribute="leading" secondItem="qkH-pe-RH0" secondAttribute="leading" id="H6u-Sd-Qm9"/>
+                            <constraint firstAttribute="trailing" secondItem="H6V-hF-Szm" secondAttribute="trailing" id="nfa-WF-3wL"/>
+                            <constraint firstItem="3OA-VW-dJq" firstAttribute="top" secondItem="H6V-hF-Szm" secondAttribute="bottom" id="qWA-vt-N8O"/>
+                            <constraint firstItem="pxo-pi-yRu" firstAttribute="top" secondItem="qkH-pe-RH0" secondAttribute="top" id="rFh-dF-nzc"/>
+                            <constraint firstItem="3OA-VW-dJq" firstAttribute="top" secondItem="pxo-pi-yRu" secondAttribute="bottom" id="wWI-gd-54y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="A9D-oR-xN1" id="x0W-tM-Qkf"/>
+                        <outlet property="nameField" destination="UFp-aE-ihk" id="1cg-Gs-Hci"/>
+                        <outlet property="passwordField" destination="dqW-bq-bO6" id="eBW-iY-z8i"/>
+                        <outlet property="usernameField" destination="BY4-y8-3Z7" id="PU5-j5-J0F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BMG-I6-dx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5303" y="-200"/>
         </scene>
     </scenes>
     <resources>
@@ -897,4 +1150,7 @@
         <image name="settings_icon" width="21" height="21"/>
         <image name="world" width="58" height="58"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8nv-Xq-2Mi"/>
+    </inferredMetricsTieBreakers>
 </document>

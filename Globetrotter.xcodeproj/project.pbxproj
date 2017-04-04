@@ -10,6 +10,8 @@
 		0442D0C9564AD791E6A760A8 /* Pods_Globetrotter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C28E6B97471B7AA04A9D70BF /* Pods_Globetrotter.framework */; };
 		15E55EFB7CC071BC2A619971 /* Pods_GlobetrotterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA8ACC2BDB19243A01B2839 /* Pods_GlobetrotterUITests.framework */; };
 		1D509860BF084472E4815670 /* Pods_GlobetrotterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFC019D13EC444C8A983D82 /* Pods_GlobetrotterTests.framework */; };
+		DC1655AE1E93E2D300F1F17C /* FacebookLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1655AD1E93E2D300F1F17C /* FacebookLogin.swift */; };
+		DC1655B31E941F9600F1F17C /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1655B21E941F9600F1F17C /* SignUpController.swift */; };
 		DC3871391E8F301A002D8D33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3871381E8F301A002D8D33 /* AppDelegate.swift */; };
 		DC38713B1E8F301A002D8D33 /* HomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38713A1E8F301A002D8D33 /* HomeScreenController.swift */; };
 		DC3871421E8F301A002D8D33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3871401E8F301A002D8D33 /* Main.storyboard */; };
@@ -48,6 +50,9 @@
 		91573501FE619F5713F8F669 /* Pods-GlobetrotterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobetrotterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GlobetrotterUITests/Pods-GlobetrotterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B3208B02CB9425CC23D57F77 /* Pods-Globetrotter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Globetrotter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Globetrotter/Pods-Globetrotter.debug.xcconfig"; sourceTree = "<group>"; };
 		C28E6B97471B7AA04A9D70BF /* Pods_Globetrotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Globetrotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC1655AD1E93E2D300F1F17C /* FacebookLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLogin.swift; sourceTree = "<group>"; };
+		DC1655AF1E93F9C100F1F17C /* Globetrotter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Globetrotter.entitlements; sourceTree = "<group>"; };
+		DC1655B21E941F9600F1F17C /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		DC3871351E8F301A002D8D33 /* Globetrotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Globetrotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3871381E8F301A002D8D33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC38713A1E8F301A002D8D33 /* HomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenController.swift; sourceTree = "<group>"; };
@@ -122,6 +127,7 @@
 		DC3871371E8F301A002D8D33 /* Globetrotter */ = {
 			isa = PBXGroup;
 			children = (
+				DC1655AF1E93F9C100F1F17C /* Globetrotter.entitlements */,
 				DC3871381E8F301A002D8D33 /* AppDelegate.swift */,
 				DC38719D1E8F7866002D8D33 /* Controller */,
 				DC38719C1E8F7860002D8D33 /* View */,
@@ -166,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				DC38713A1E8F301A002D8D33 /* HomeScreenController.swift */,
+				DC1655AD1E93E2D300F1F17C /* FacebookLogin.swift */,
+				DC1655B21E941F9600F1F17C /* SignUpController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -272,6 +280,11 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = KFC25KK57P;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					DC38714C1E8F301A002D8D33 = {
 						CreatedOnToolsVersion = 8.3;
@@ -476,7 +489,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC3871A11E8F78B2002D8D33 /* RoundTextField.swift in Sources */,
+				DC1655AE1E93E2D300F1F17C /* FacebookLogin.swift in Sources */,
 				DC38719F1E8F7879002D8D33 /* RoundButton.swift in Sources */,
+				DC1655B31E941F9600F1F17C /* SignUpController.swift in Sources */,
 				DC4C9E441E91FB310011C424 /* TabItem.swift in Sources */,
 				DCA8FBE51E91EF7900CBC9B4 /* ColourTab.swift in Sources */,
 				DC38713B1E8F301A002D8D33 /* HomeScreenController.swift in Sources */,
@@ -635,6 +650,7 @@
 			baseConfigurationReference = B3208B02CB9425CC23D57F77 /* Pods-Globetrotter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Globetrotter/Globetrotter.entitlements;
 				DEVELOPMENT_TEAM = KFC25KK57P;
 				INFOPLIST_FILE = Globetrotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
@@ -650,6 +666,7 @@
 			baseConfigurationReference = EFC3B2F50ADD7256688A38DF /* Pods-Globetrotter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Globetrotter/Globetrotter.entitlements;
 				DEVELOPMENT_TEAM = KFC25KK57P;
 				INFOPLIST_FILE = Globetrotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
