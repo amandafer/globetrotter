@@ -1,0 +1,6 @@
+framework module Pods_GlobetrotterTests {
+  umbrella header "Pods-GlobetrotterTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
