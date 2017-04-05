@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Parse
 
 class FacebookLogin: UIViewController {
     
@@ -24,6 +25,13 @@ class FacebookLogin: UIViewController {
             } else {
                 print("ERROR: Successufully logged in with Facebook.")
             }
+        }
+    }
+    
+    // Checks if the user is already signed in
+    override func viewDidAppear(_ animated: Bool) {
+        if PFUser.current() != nil {
+            performSegue(withIdentifier: "showHome", sender: self)
         }
     }
 }

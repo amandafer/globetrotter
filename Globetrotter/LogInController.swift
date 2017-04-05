@@ -7,13 +7,44 @@
 //
 
 import UIKit
+import Parse
 
 class LogInController: UIViewController {
     @IBOutlet weak var usernameField: RoundTextField!
     @IBOutlet weak var passwordField: RoundTextField!
 
     @IBAction func logInBtn(_ sender: Any) {
+        if let username = usernameField.text, let password = passwordField.text {
+            PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
+                
+                if error != nil {
+                    var displayErrorMessage = "Please try again later."
+                    
+                    // Returns the error message to the user (ie. "Account already exists for username")
+                    if let errorMessage = (error! as NSError).userInfo["error"] as? String {
+                        displayErrorMessage = errorMessage
+                    }
+                    
+                    self.createAlert(title: "Could not log in", message: displayErrorMessage, dismissView: false)
+                } else {
+                    print("login successful")
+                    self.performSegue(withIdentifier: "showHome", sender: self)
+                }
+            }
+        }
+    }
+    
+    // function that creates alerts for the user
+    func createAlert(title: String?, message: String?, dismissView: Bool) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            
+            if (dismissView) {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }))
         
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
