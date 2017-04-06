@@ -12,7 +12,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Parse
 
-class FacebookLogin: UIViewController {
+class FacebookLoginController: UIViewController {
     
     @IBAction func facebookBtnTapped(_ sender: Any) {
         let facebookLogin = FBSDKLoginManager()
@@ -23,9 +23,12 @@ class FacebookLogin: UIViewController {
             } else if result?.isCancelled == true {
                 print("ERROR: User canceled Facebook authentication.")
             } else {
-                print("ERROR: Successufully logged in with Facebook.")
+                
+                self.performSegue(withIdentifier: "showHome", sender: self)
             }
         }
+        
+        //PFFacebookUtils.log
     }
     
     // Checks if the user is already signed in

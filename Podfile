@@ -8,6 +8,7 @@ target 'Globetrotter' do
   # Pods for Globetrotter
   pod 'FBSDKLoginKit'
   pod 'Parse'
+  pod 'ParseFacebookUtilsV4'
 
   target 'GlobetrotterTests' do
     inherit! :search_paths
